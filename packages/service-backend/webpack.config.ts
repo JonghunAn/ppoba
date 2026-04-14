@@ -3,7 +3,8 @@ import * as webpack from 'webpack';
 import { execSync } from 'child_process';
 
 module.exports = {
-  entry: './src/entry.lambda.ts',
+  // entry: './src/entry.lambda.ts', // NOTE: Lambda 배포용 (주석처리)
+  entry: './src/entry.local.ts', // Fly.io / standalone 배포용
   mode: 'development',
   target: 'node',
   devtool: 'source-map',

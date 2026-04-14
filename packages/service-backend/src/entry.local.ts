@@ -1,5 +1,7 @@
 import { bootstrap } from './bootstrap';
 
+const port = Number(process.env.PORT) || 3001;
+
 bootstrap().then(({ app }) => {
-  app.listen(3001).then(() => console.log('\nhttp://localhost:3001'));
+  app.listen(port).then(() => console.log(`\nhttp://localhost:${port}`));
 });

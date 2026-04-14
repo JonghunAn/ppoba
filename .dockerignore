@@ -1,0 +1,10 @@
+node_modules
+.git
+*.md
+packages/service-frontend
+packages/ui
+packages/tailwind-config
+packages/api
+script
+fly.toml
+.dockerignore

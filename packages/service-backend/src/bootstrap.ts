@@ -13,7 +13,13 @@ export async function bootstrap(): Promise<{ app: NestExpressApplication; instan
   const app = await NestFactory.create<NestExpressApplication>(
     AppModule,
     new ExpressAdapter(instance),
-    { logger, cors: true }
+    {
+      logger,
+      cors: {
+        origin: (process.env.FRONTEND_ORIGIN || 'http://localhost:3000').split(','),
+        credentials: true,
+      },
+    }
   );
   app.useGlobalPipes(
     new ValidationPipe({

@@ -1,0 +1,27 @@
+# =============================================================================
+# Fly.io configuration for PPOBA Backend
+# =============================================================================
+# Deploy: fly deploy
+# Secrets: fly secrets set KEY=VALUE
+# =============================================================================
+
+app = "ppoba-backend"
+primary_region = "nrt"  # Tokyo (closest to Seoul)
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  # Non-secret env vars (secrets are set via `fly secrets set`)
+  STAGE = "dev"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"     # Stop when idle (save free tier hours)
+  auto_start_machines = true      # Auto-start on request
+  min_machines_running = 0        # Allow scaling to zero
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
