@@ -16,7 +16,9 @@ export default function LoginPage(): JSX.Element {
     () => {
       router.replace('/')
     },
-    () => {
+    (error) => {
+      console.error('[PPOBA Login Error]', error)
+      alert(`로그인 실패: ${error?.message || JSON.stringify(error)}`)
       router.push('/404')
     },
   )
