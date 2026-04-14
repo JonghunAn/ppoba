@@ -32,7 +32,7 @@ export class AuthKakaoService {
     token_type: string;
     refresh_token: string;
     expires_in: number;
-    scope: string;
+    scope?: string;
     refresh_token_expires_in: number;
   }> {
     const response = await got
@@ -54,7 +54,7 @@ export class AuthKakaoService {
       token_type: string;
       refresh_token: string;
       expires_in: number;
-      scope: string;
+      scope?: string;
       refresh_token_expires_in: number;
     }>(response);
   }
