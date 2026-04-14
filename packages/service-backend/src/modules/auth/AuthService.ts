@@ -27,8 +27,8 @@ export class AuthService {
     if (!user) {
       user = await this.signUp({
         id: String(userInfo.id),
-        age: userInfo.kakao_account.age_range ?? '20-29',
-        gender: userInfo.kakao_account.gender ?? 'unknown',
+        age: userInfo.kakao_account?.age_range ?? '20-29',
+        gender: userInfo.kakao_account?.gender ?? 'unknown',
       });
     }
 
