@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from 'react'
 
 import { Button, Icon, SecondaryButton } from '@ppoba/ui'
