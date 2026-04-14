@@ -1,5 +1,7 @@
 import { ContentWrapper } from '@/app/components'
 
+export const dynamic = 'force-dynamic'
+
 interface Props {
   children: React.ReactNode
 }

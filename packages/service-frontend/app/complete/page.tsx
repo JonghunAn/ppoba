@@ -1,7 +1,5 @@
 'use client'
 
-export const dynamic = 'force-dynamic'
-
 import Lottie from 'lottie-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Button } from '@ppoba/ui'
